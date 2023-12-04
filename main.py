@@ -10,7 +10,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
+
 @app.get("/", response_class=HTMLResponse)
 async def read_page(request: Request):
     return templates.TemplateResponse("response.html", {"request": request})
 
+
+@app.get("/side_link")
+def get_side_page(request: Request):
+    return templates.TemplateResponse("sidepage.html", {"request": request})

@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>FastAPI Test App</title>
-    <link rel="stylesheet" href="static/stylesheet.css">
-</head>
-<body>
-<h1>Are you still a [[Little Sponge]]?</h1>
-<img src="static/spamton.gif" >
+{% extends "zero.html" %}
+{% block title %} FastAPI Test Page {% endblock title %}
 
-</body>
-</html>
+{% block body %}
+<h1>Are you still a [[Little Sponge]]?</h1>
+<a href="{{ url_for('get_side_page') }}"><img src="static/images/spamton.gif"></a>
+
+{% endblock body %}
